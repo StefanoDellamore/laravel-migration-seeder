@@ -16,9 +16,9 @@ class CreateTrainsTable extends Migration
             $table->time('departure_time');
             $table->time('arrival_time');
             $table->string('train_code');
-            $table->string('number_of_coaches');
-            $table->string('is_on_time') ->dafault(true);
-            $table->string('is_cancelled') ->dafault(false);
+            $table->integer('number_of_coaches');
+            $table->boolean('is_on_time') ->dafault(true);
+            $table->boolean('is_cancelled') ->dafault(false);
             $table->timestamps();
         });
     }
