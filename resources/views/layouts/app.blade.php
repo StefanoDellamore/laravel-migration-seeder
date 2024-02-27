@@ -15,11 +15,22 @@
         @yield('head-imports')
     </head>
     <body>
+        <div>
+            <h2>Treni in partenza</h2>
 
-        @include('partials.header')
+            <ul>
+                @foreach($trains as $train)
 
-        @include('partials.footer')
+                <li>
+                    {{ $train->company }} - 
+                    Partenza: {{ $train->departure_station }} alle {{ $train->departure_time }} - 
+                    Arrivo: {{ $train->arrival_station }} alle {{ $train->arrival_time }} 
+                </li>
 
+                @endforeach
+            </ul>
+        </div>
+       
         {{-- JS da importare nel body --}}
         @yield('body-imports')
     </body>
